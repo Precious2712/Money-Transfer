@@ -8,18 +8,11 @@ async function bootstrap() {
 
   app.enableCors({
     origin: [
+      'https://bank-transfer-cyan.vercel.app',
       'http://localhost:3000',
-      'http://localhost:3001',
-      'https://bank-transfer-cyan.vercel.app'
+      'http://localhost:3001'
     ],
-
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
-
-    allowedHeaders: ['Content-Type'],
-
-    credentials: true,
-
-    optionsSuccessStatus: 200,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS']
   });
 
   await app.listen(process.env.PORT ?? 3000);
