@@ -7,6 +7,8 @@ import { HealthModule } from './health/health.module';
 import { DatabaseModule } from './database/database.module';
 import { AuthModule } from './auth/auth.module';
 import { BankAccountModule } from './bank-account/bank-account.module';
+import { DebitModule } from './debit/debit.module';
+import { CreditModule } from './credit/credit.module';
 
 @Module({
   imports: [
@@ -20,8 +22,7 @@ import { BankAccountModule } from './bank-account/bank-account.module';
       inject: [ConfigService],
       useFactory: async (configService: ConfigService) => {
         const uri = configService.get<string>('MONGO_URI');
-        console.log('🔗 Connecting to MongoDB with URI:', uri);
-
+        // console.log('🔗 Connecting to MongoDB with URI:', uri);
         return { uri };
       },
     }),
@@ -30,8 +31,10 @@ import { BankAccountModule } from './bank-account/bank-account.module';
     DatabaseModule,
     AuthModule,
     BankAccountModule,
+    DebitModule,
+    CreditModule,
   ],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule { }

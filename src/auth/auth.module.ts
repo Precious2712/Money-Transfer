@@ -9,7 +9,7 @@ import { Singnup, authSchema } from './schema/auth.schema';
 
 @Module({
   imports: [
-    ConfigModule, // 👈 import ConfigModule so ConfigService works
+    ConfigModule,
 
     MongooseModule.forFeature([
       {
@@ -27,8 +27,14 @@ import { Singnup, authSchema } from './schema/auth.schema';
       }),
     }),
   ],
+  
   controllers: [AuthController],
   providers: [AuthService, JwtStrategy],
-  exports: [JwtModule],
+
+  exports: [
+    JwtModule,
+    MongooseModule,
+  ],
 })
+
 export class AuthModule {}
