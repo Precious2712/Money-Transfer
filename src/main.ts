@@ -10,6 +10,7 @@ async function bootstrap() {
       'http://localhost:3000', 
       'http://localhost:3001', 
       'https://bank-transfer-one.vercel.app', 
+      'https://bank-transfer-khaki.vercel.app'
     ],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
     credentials: true,
