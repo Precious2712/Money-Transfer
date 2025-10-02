@@ -12,7 +12,8 @@ async function bootstrap() {
       'http://localhost:3000',
       'http://localhost:3001'
     ],
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS']
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+    allowedHeaders: ['Content-Type'] 
   });
 
   await app.listen(process.env.PORT ?? 3000);
