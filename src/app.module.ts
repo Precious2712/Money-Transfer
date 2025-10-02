@@ -37,4 +37,5 @@ import { CreditModule } from './credit/credit.module';
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule { }
+
+export class AppModule {}

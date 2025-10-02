@@ -5,6 +5,7 @@ import { ValidationPipe } from '@nestjs/common';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.useGlobalPipes(new ValidationPipe());
+
   app.enableCors({
     origin: [
       'http://localhost:3000', 
@@ -12,7 +13,11 @@ async function bootstrap() {
       'https://bank-transfer-one.vercel.app', 
       'https://bank-transfer-khaki.vercel.app'
     ],
+
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    
     credentials: true,
   });
 
