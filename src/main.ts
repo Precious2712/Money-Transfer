@@ -8,7 +8,7 @@ async function bootstrap() {
 
   app.enableCors({
     origin: [
-      'https://https://bank-transfer-kappa.vercel.app/',
+      'https://bank-transfer-kappa.vercel.app/',
       'http://localhost:3000',
       'http://localhost:3001'
     ],
