@@ -8,13 +8,14 @@ async function bootstrap() {
 
   app.enableCors({
     origin: [
-      'https://bank-transfer-kappa.vercel.app/',
+      'https://bank-transfer-kappa.vercel.app',
       'http://localhost:3000',
-      'http://localhost:3001'
+      'http://localhost:3001',
     ],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
-    allowedHeaders: ['Content-Type'] 
+    allowedHeaders: ['Content-Type', 'Authorization'],
   });
+
 
   await app.listen(process.env.PORT ?? 3000);
 }
